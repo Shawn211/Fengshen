@@ -14,17 +14,37 @@ html=requests.get(play1).content
 html=re.sub('<br>','\n',html)
 
 html=etree.HTML(html)
+html=str(html)
+html=etree.HTML(html)
 
 html = html.xpath('string(//body)').encode('utf-8')
 
-print html
+print html.decode('utf-8')
 
 jz='你好你好你好11111111111111111111111111111111111111'
 print jz.decode('utf-8')
 
 start=time.time()
 time.sleep(1)
-print '00000000000000000'+time.time()-start
+print '00000000000000000'+str(int(time.time()-start))
+
+a=0
+while 1:
+    while a<5:
+        time.sleep(1)
+        a=a+1
+        print a
+        if a>2:
+            break
+    print 'test'
+print 'noooooo'
+
+
+
+
+
+
+
 
 a='123'
 
